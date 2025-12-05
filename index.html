@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etika Digital Dalam Islam - Visual Essay</title>
+    
+    <style>
+        /* 1. FONT: Playfair Display (Elegan untuk Judul) & Lato (Bersih untuk Isi) */
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+        /* 2. PALET WARNA ALAM (EARTH TONES) */
+        :root {
+            /* Latar belakang cream yang lebih kaya/hangat */
+            --bg-color: #F4F1E8;
+            /* Teks utama: Hijau hutan yang sangat tua (hampir hitam) */
+            --text-primary: #1C261E;
+            /* Teks sekunder: Hijau olive/sage */
+            --text-secondary: #5A665A;
+            /* Aksen: Warna emas/coklat tanah liat */
+            --accent-color: #C7B299;
+            /* Garis pemisah yang sangat halus */
+            --divider: rgba(90, 102, 90, 0.2);
+        }
+
+        /* 3. RESET & DASAR */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 18px;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.9;
+            font-weight: 300;
+            overflow-x: hidden;
+        }
+
+        /* Wadah utama agar konten terpusat rapi */
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        /* 4. NAVIGASI (Sangat Minimalis) */
+        nav {
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--divider);
+        }
+
+        nav ul {
+            list-style: none;
+            display: inline-flex;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--text-primary);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* 5. HEADER (Judul Besar & Gambar Sinematik) */
+        header {
+            text-align: center;
+            /* Padding lebih kecil karena ada banyak foto di atas */
+            padding: 50px 0 60px 0; 
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        header p.subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+        }
+
+        /* --- STYLING BARU UNTUK FOTO DI HEADER --- */
+        .photo-gallery {
+            display: flex;
+            flex-direction: column; /* Atur layout kolom */
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        /* Foto Dosen (Paling Atas) */
+        .photo-dosen {
+            margin-bottom: 30px;
+        }
+
+        /* Container untuk Foto Rifha dan Sopiyullah */
+        .photo-mahasiswa-group {
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* Jarak antar foto mahasiswa */
+        }
+
+        .photo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 150px;
+            text-align: center;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%; /* Membuat foto menjadi bulat */
+            border: 3px solid var(--accent-color);
+            margin-bottom: 10px;
+            filter: grayscale(20%) brightness(105%); /* Efek visual halus */
+        }
+
+        .photo-item p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: var(--text-secondary);
+        }
+
+        .photo-item.dosen p {
+            font-weight: 500;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .photo-item.dosen span {
+             display: block;
+             font-size: 0.85rem;
+             color: var(--text-secondary);
+             font-family: 'Lato', sans-serif;
+        }
+
+        /* Gaya Gambar Utama */
+        .hero-imagebox {
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(28, 38, 30, 0.08);
+        }
+
+        .hero-imagebox img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(15%) contrast(105%) brightness(102%);
+        }
+
+        /* 6. MAIN CONTENT & SECTIONS (CSS SAMA SEPERTI SEBELUMNYA) */
+        main {
+            padding: 60px 0;
+        }
+
+        section {
+            margin-bottom: 120px;
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        p {
+            margin-bottom: 25px;
+        }
+
+        .editorial-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 6px;
+            margin: 10px 0 30px 30px;
+            float: right;
+            filter: sepia(10%) contrast(105%);
+        }
+
+        ul.elegant-list {
+            list-style: none;
+            margin: 40px 0;
+            padding-left: 10px;
+        }
+
+        ul.elegant-list li {
+            margin-bottom: 35px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        ul.elegant-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-family: 'Playfair Display', serif;
+        }
+
+        ul.elegant-list li strong {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        blockquote.pull-quote {
+            border: none;
+            margin: 60px auto;
+            padding: 0 40px;
+            text-align: center;
+        }
+
+        blockquote.pull-quote p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            line-height: 1.4;
+            color: var(--text-secondary);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="%23C7B299" opacity="0.3"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.571 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: top center;
+            padding-top: 50px;
+        }
+        
+        blockquote footer {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: var(--accent-color);
+            text-align: center;
+            border: none;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* 7. FOOTER HALAMAN */
+        body > footer {
+            text-align: center;
+            padding: 80px 20px;
+            margin-top: 60px;
+            border-top: 1px solid var(--divider);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.05em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        /* Merapikan Footer */
+        body > footer .author-list {
+            margin-top: 5px;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        /* RESPONSIF (Mobile) */
+        @media (max-width: 768px) {
+            html { font-size: 16px; }
+            header h1 { font-size: 2.8rem; }
+            .hero-imagebox { height: 300px; }
+            nav ul { gap: 20px; }
+            
+            .editorial-image {
+                float: none;
+                width: 100%;
+                max-width: 100%;
+                margin: 20px 0;
+                height: 250px;
+                object-fit: cover;
+            }
+            
+            /* Pada mobile, tata letak foto mahasiswa menjadi vertikal */
+            .photo-mahasiswa-group {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .photo-item {
+                width: 120px; /* Sedikit lebih kecil */
+            }
+
+            .photo-item img {
+                 height: 120px;
+            }
+
+            blockquote.pull-quote p { font-size: 1.4rem; }
+            section h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <nav>
+            <ul>
+                <li><a href="#adab">Adab</a></li>
+                <li><a href="#ghibah">Ghibah</a></li>
+                <li><a href="#privasi">Privasi</a></li>
+            </ul>
+        </nav>
+
+        <header>
+
+            <div class="photo-gallery">
+                
+                <div class="photo-dosen">
+                    <div class="photo-item dosen">
+                        <img src="dosen.jpg" alt="Foto Dosen">
+                        <p>Firmansyah, M.Pd.</p>
+                        <span>Dosen Pengampu</span>
+                    </div>
+                </div>
+
+                <div class="photo-mahasiswa-group">
+                    
+                    <div class="photo-item">
+                        <img src="rifa.jpg" alt="Foto Moh. Rifha Mahendra">
+                        <p>Moh. Rifha Mahendra<br>(12401073)</p>
+                    </div>
+                    
+                    <div class="photo-item">
+                        <img src="sopi.jpg" alt="Foto Sopiyullah">
+                        <p>Sopiyullah<br>(12401074)</p>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <h1>Etika Digital Dalam Islam</h1>
+            <p class="subtitle">Sebuah refleksi visual: Menjadikan jemari sebagai saksi kebaikan di hadapan Allah SWT.</p>
+            
+            <div class="hero-imagebox">
+                <img src="ian.jpg" alt="Etika Digital Islam Banner">
+            </div>
+        </header>
+
+        <main>
+            <section id="adab">
+                <h2>Adab Media Sosial</h2>
+                <img src="foto1.jpg" alt="Ilustrasi Adab" class="editorial-image">
+                
+                <p>Media sosial adalah cerminan wajah spiritual kita di era modern. Di masa di mana batas antara realitas fisik dan maya semakin memudar, setiap ketukan di layar—setiap postingan, tanda suka, dan komentar—menjadi jejak digital yang permanen. Sebagai Muslim, kita memikul tanggung jawab besar untuk memastikan jejak ini menjadi ladang pahala, bukan beban hisab di kemudian hari.</p>
+                
+                <ul class="elegant-list">
+                    <li>
+                        <strong>Etika Waktu & Produktivitas</strong>
+                        Kendalikan screen time Anda dengan bijak. Media sosial hanyalah alat, bukan tujuan hidup. Jangan biarkan ia merampas waktu shalat yang khusyuk atau momen berharga bersama keluarga. Waktu adalah pedang; gunakanlah untuk memotong hal yang sia-sia.
+                    </li>
+                    <li>
+                        <strong>Konten yang Bermanfaat</strong>
+                        Jadikan akun Anda sebagai sumber cahaya di tengah kegelapan informasi. Postingan Anda sebaiknya bukan sekadar tentang kesenangan pribadi, melainkan sesuatu yang memberi nilai tambah. Tanyakan pada diri sendiri: Apakah ini mengajak pada kebaikan (amar ma'ruf)?
+                    </li>
+                </ul>
+            </section>
+
+            <section id="ghibah">
+                <h2>Ghibah Digital</h2>
+                <p>Ghibah digital adalah racun tak berbau yang menyebar secepat kecepatan cahaya. Tanpa disadari, jemari yang mengetik komentar pedas atau meneruskan aib saudara di grup percakapan sama berat dosanya dengan memakan bangkai saudara sendiri. Di ruang digital, jari kita adalah lisan baru yang wajib dijaga kesuciannya.</p>
+                
+                <img src="foto2.jpg" alt="Ilustrasi Ghibah" class="editorial-image" style="float:left; margin: 10px 30px 30px 0;">
+
+                <ul class="elegant-list">
+                    <li>
+                        <strong>Filter Tabayyun</strong>
+                        Sebelum membagikan informasi, terapkan filter ketat: "Apakah ini benar? Apakah ini penting? Apakah ini bermanfaat jika disebar?" Menyebarkan fitnah di dunia maya sama beratnya dengan menciptakannya di dunia nyata.
+                    </li>
+                    <li>
+                        <strong>Menahan Diri dari Mencela</strong>
+                        Hindari humor atau komentar yang merendahkan fisik, ras, atau keyakinan orang lain. Kehormatan seorang Muslim adalah suci; menjaganya adalah tanda keimanan yang luhur.
+                    </li>
+                </ul>
+
+                <blockquote class="pull-quote">
+                    <p>Sesungguhnya orang yang paling aku cintai dan paling dekat tempat duduknya denganku pada hari Kiamat adalah orang yang paling baik akhlaknya.</p>
+                    <footer>HR. At-Tirmidzi</footer>
+                </blockquote>
+            </section>
+
+            <section id="privasi">
+                <h2>Privasi & Amanah</h2>
+                <img src="foto3.jpg" alt="Ilustrasi Privasi" class="editorial-image">
+                <p>Dalam riuh rendahnya dunia yang serba terhubung, privasi telah menjadi barang yang langka dan mewah. Islam mengajarkan bahwa menjaga rahasia dan memegang amanah adalah ciri utama seorang mukmin yang jujur. Privasi orang lain adalah benteng kehormatan yang wajib kita lindungi, bukan untuk diintip, apalagi diumbar demi konten.</p>
+                
+                <ul class="elegant-list">
+                    <li>
+                        <strong>Pesan Rahasia adalah Amanah</strong>
+                        Jika seseorang mempercayakan pesan pribadi atau menceritakan aibnya melalui percakapan tertutup, pesan itu adalah amanah yang berat. Melanggar amanah tersebut sama artinya dengan berkhianat.
+                    </li>
+                    <li>
+                        <strong>Menghindari Tajassus (Spying)</strong>
+                        Dilarang keras memata-matai atau mencari-cari kesalahan dan aib orang lain melalui media sosial (tajassus). Allah memerintahkan kita untuk menutup aib saudara kita, agar Allah pun menutup aib kita di akhirat kelak.
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+    </div> 
+    
+    <footer>
+        <p>&copy; 2025  Etika Digital Islam</p>
+        <p class="author-list">Disusun oleh: Sopiyullah & Moh. Rifha Mahendra</p>
+    </footer>
+
+</body>
+</html>
